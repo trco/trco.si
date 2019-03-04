@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <section class="col-lg-8 text-center">
+
+      <h1 class="typewriter my-4"></h1>
+
+      <article>
+        <h3 class="mb-4"><strong>Author</strong></h3>
+
+        <h3 class="mb-3">
+          django-bootstrap-modal-forms
+          <a href="https://github.com/trco/django-bootstrap-modal-forms" target="_blank" style="text-decoration: none;">
+            <svg style="" viewbox="0 0 64 64" width="32" height="32">
+              <path
+                stroke-width="0"
+                fill="currentColor"
+                d="M32 0 C14 0 0 14 0 32 0 53 19 62 22 62 24 62 24 61 24 60 L24 55 C17 57 14 53 13 50 13 50 13 49 11 47 10 46 6 44 10 44 13 44 15 48 15 48 18 52 22 51 24 50 24 48 26 46 26 46 18 45 12 42 12 31 12 27 13 24 15 22 15 22 13 18 15 13 15 13 20 13 24 17 27 15 37 15 40 17 44 13 49 13 49 13 51 20 49 22 49 22 51 24 52 27 52 31 52 42 45 45 38 46 39 47 40 49 40 52 L40 60 C40 61 40 62 42 62 45 62 64 53 64 32 64 14 50 0 32 0 Z"></path>
+            </svg>
+          </a>
+        </h3>
+        <p class="subtitle">A jQuery plugin for creating AJAX driven Django forms in Bootstrap modal.</p>
+        <a href="#">Live Demo</a>
+
+        <h3 class="mt-5">
+          django-funky-sheets
+          <a href="https://github.com/trco/django-funky-sheets" target="_blank" style="text-decoration: none;">
+            <svg style="" viewbox="0 0 64 64" width="32" height="32">
+              <path
+                stroke-width="0"
+                fill="currentColor"
+                d="M32 0 C14 0 0 14 0 32 0 53 19 62 22 62 24 62 24 61 24 60 L24 55 C17 57 14 53 13 50 13 50 13 49 11 47 10 46 6 44 10 44 13 44 15 48 15 48 18 52 22 51 24 50 24 48 26 46 26 46 18 45 12 42 12 31 12 27 13 24 15 22 15 22 13 18 15 13 15 13 20 13 24 17 27 15 37 15 40 17 44 13 49 13 49 13 51 20 49 22 49 22 51 24 52 27 52 31 52 42 45 45 38 46 39 47 40 49 40 52 L40 60 C40 61 40 62 42 62 45 62 64 53 64 32 64 14 50 0 32 0 Z"></path>
+            </svg>
+          </a>
+        </h3>
+        <p class="subtitle">Django implementation of Handsontable spreadsheets for CRUD actions.</p>
+        <a href="#">Live Demo</a>
+      </article>
+
+      <article>
+        <h3 class="mt-5 mb-4"><strong>Contributor</strong></h3>
+
+        <h3 class="mb-3">
+          DynamicForms
+          <a href="https://github.com/velis74/DynamicForms" target="_blank" style="text-decoration: none;">
+            <svg style="" viewbox="0 0 64 64" width="32" height="32">
+              <path
+                stroke-width="0"
+                fill="currentColor"
+                d="M32 0 C14 0 0 14 0 32 0 53 19 62 22 62 24 62 24 61 24 60 L24 55 C17 57 14 53 13 50 13 50 13 49 11 47 10 46 6 44 10 44 13 44 15 48 15 48 18 52 22 51 24 50 24 48 26 46 26 46 18 45 12 42 12 31 12 27 13 24 15 22 15 22 13 18 15 13 15 13 20 13 24 17 27 15 37 15 40 17 44 13 49 13 49 13 51 20 49 22 49 22 51 24 52 27 52 31 52 42 45 45 38 46 39 47 40 49 40 52 L40 60 C40 61 40 62 42 62 45 62 64 53 64 32 64 14 50 0 32 0 Z"></path>
+            </svg>
+          </a>
+        </h3>
+      </article>
+
+    </section>
+  </div>
+</div>
+
+{% endblock content %}
+
+{% block extrascripts %}
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typeit/6.0.2/typeit.min.js"></script>
+  <script type="text/javascript">
+  var instance = new TypeIt(".typewriter", {
+    speed: 50,
+    waitUntilVisible: true
+  })
+  .type("Open source").go();
+  </script>
+{% endblock extrascripts %}

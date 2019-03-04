@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <section class="col-lg-8 text-center">
+
+      <h1 class="typewriter my-4"></h1>
+
+      <article>
+        <h3 class="mb-3">
+          IDConference
+        </h3>
+        <p class="subtitle">"A new conference experience"​ providing attendee registration and seamless accreditation tracking with RFID towers.<br>
+          <a href="https://idconference.eu/" target="_blank">IDConference</a>
+        </p>
+        <p>Frontend & Backend development</p>
+
+        <h3 class="mb-3 mt-5">
+          Qlandia Gift Card
+        </h3>
+        <p class="subtitle">Web based app for full management of Gift cards - issuing, spending, administration, accounting - and REST API talking to the website.<br>
+          <a href="https://www.qlandia-kartica.si/si" target="_blank">Qlandia</a>
+        </p>
+        <p>Frontend & Backend development</p>
+
+        <h3 class="mb-3 mt-5">
+          Mala ulica
+        </h3>
+        <p class="subtitle">Web based app for full management of Tickets for Family center Mala ulica.<br>
+          <a href="https://www.malaulica.si/en/" target="_blank">Mala ulica</a>
+        </p>
+        <p>Frontend & Backend development</p>
+
+        <h3 class="mb-3 mt-5">
+          Cubo HOTEL
+        </h3>
+        <p class="subtitle">Web based app for full management of sold products and golf cards.<br>
+          <a href="https://www.hotelcubo.com/" target="_blank">Cubo HOTEL</a>
+        </p>
+        <p>Frontend & Backend development</p>
+
+        <h3 class="mb-3 mt-5">
+          Supernova Gift Card
+        </h3>
+        <p class="subtitle">Web based app for full management of Gift cards - issuing, spending, administration, accounting.<br>
+          <a href="http://www.supernova.si/si/darilne-kartice" target="_blank">Supernova</a>
+        </p>
+        <p>Frontend & Backend development</p>
+
+        <h3 class="mb-3 mt-5">
+          Aeroklub ALC Lesce
+        </h3>
+        <p class="subtitle">Web based app for full management of flights - reservations, flights tracking, history.</p>
+        <p>Frontend & Backend development</p>
+
+      </article>
+
+    </section>
+  </div>
+</div>
+
+{% endblock content %}
+
+{% block extrascripts %}
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typeit/6.0.2/typeit.min.js"></script>
+  <script type="text/javascript">
+  var instance = new TypeIt(".typewriter", {
+    speed: 50,
+    waitUntilVisible: true
+  })
+  .type("Projects").go();
+  </script>
+{% endblock extrascripts %}

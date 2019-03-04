@@ -1,2 +1,35 @@
+{% extends 'base.html' %}
+
 {% block content %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <section class="col-lg-8 text-center">
+
+      <article class="typewriter mt-5"></article>
+
+      <article class="img-index text-center">
+        <img src="http://learn.corel.com/wp-content/uploads/2016/06/double_exposure1.jpg" alt="">
+      </article>
+
+    </section>
+  </div>
+</div>
+
 {% endblock content %}
+
+{% block extrascripts %}
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typeit/6.0.2/typeit.min.js"></script>
+  <script type="text/javascript">
+  var instance = new TypeIt(".typewriter", {
+    speed: 50,
+    waitUntilVisible: true
+  })
+  .type("What's your name?").pause(1000).delete(29)
+  .type("My name is <strong>Trčo</strong>.").pause(1000).delete(29)
+  .type("And what are you doing?").pause(1000).delete(29)
+  .type("I'm developing with").break()
+  .type("Python, Django, SQL and JavaScript.")
+  .go();
+  </script>
+{% endblock extrascripts %}
