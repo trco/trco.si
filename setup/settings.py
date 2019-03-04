@@ -14,7 +14,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
     'pages',
+    'accounts',
+    # django-bootstrap-modal-forms
+    'bootstrap_modal_forms',
+    'dbmf',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +75,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+LOGIN_REDIRECT_URL = 'dbmf:dbmf'
+LOGOUT_REDIRECT_URL = 'dbmf:dbmf'
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'

@@ -2,6 +2,8 @@ from django.urls import path
 
 from . import views
 
+
+app_name = 'pages'
 urlpatterns = [
     path('', views.Index.as_view(), name='index'),
     path('open-source/', views.OpenSourceView.as_view(), name='open_source'),
