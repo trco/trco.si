@@ -29,3 +29,13 @@ body {
   display: flex;
   justify-content: center;
 }
+
+/* dbmf app */
+.invalid {
+  color: #dc3545;
+}
+
+h1 span {
+  font-size: 0.75em;
+
+}

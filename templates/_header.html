@@ -3,6 +3,21 @@
 <!-- header -->
 <header>
 
+  <!-- messages -->
+  <div>
+    {% if messages %}
+      {% for message in messages %}
+        <div style="border-radius:0;" {% if message.tags %} class="alert alert-icon alert-{{ message.tags }} alert-dismissible fade show mb-0" role="alert" {% endif %}>
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <!-- end messages -->
+
   <!-- navbar -->
   <div class="container">
     <div class="row justify-content-center">
@@ -13,27 +28,12 @@
         <nav class="navbar navbar-light navbar-expand p-0">
           <ul class="navbar-nav mx-auto">
             <a class="nav-item nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %} py-4" href="{% url 'pages:index' %}">About</a>
-            <a class="nav-item nav-link {% if request.resolver_match.url_name == 'open_source' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:open_source' %}">Open source</a>
+            <a class="nav-item nav-link {% if request.resolver_match.url_name == 'open_source' or request.resolver_match.url_name == 'dbmf' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:open_source' %}">Open source</a>
             <a class="nav-item nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:projects' %}">Projects</a>
           </ul>
         </nav>
       </div>
       <!-- end navbar -->
-
-      <!-- messages -->
-      <div class="col-12">
-        {% if messages %}
-          {% for message in messages %}
-            <div style="border-radius:0;" {% if message.tags %} class="alert alert-icon alert-{{ message.tags }} alert-dismissible fade show mb-0" role="alert" {% endif %}>
-              {{ message }}
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          {% endfor %}
-        {% endif %}
-      </div>
-      <!-- end messages -->
 
     </div>
   </div>
