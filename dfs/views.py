@@ -40,8 +40,8 @@ class CreateMovieView(HotView):
         'contextMenu': 'true',
         'autoWrapRow': 'true',
         'rowHeaders': 'true',
-        'contextMenu': 'true',
-        'search': 'true'
+        'search': 'true',
+        'licenseKey': 'non-commercial-and-evaluation',
     }
 
 
@@ -54,6 +54,6 @@ class UpdateMovieView(CreateMovieView):
         'contextMenu': 'true',
         'autoWrapRow': 'true',
         'rowHeaders': 'true',
-        'contextMenu': 'true',
-        'search': 'true'
+        'search': 'true',
+        'licenseKey': 'non-commercial-and-evaluation',
     }

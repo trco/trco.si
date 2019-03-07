@@ -25,11 +25,12 @@
     speed: 50,
     waitUntilVisible: true
   })
-  .type("What's your name?").pause(1000).delete(29)
-  .type("My name is <strong>Trčo</strong>.").pause(1000).delete(29)
-  .type("And what are you doing?").pause(1000).delete(29)
-  .type("I'm developing with").break()
-  .type("Python, Django, SQL and JavaScript.")
+  .type("They call me <strong>Trčo</strong>.").pause(1000).delete(29)
+  .type("I'm web developer using").break()
+  .type("Python, Django, SQL and JavaScript.").pause(1000).delete(60)
+  .type("<strong>Trčo</strong>").pause(1000)
+  .type(" = ").pause(1000)
+  .type("Web developer")
   .go();
   </script>
 {% endblock extrascripts %}

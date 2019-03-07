@@ -11,3 +11,7 @@ class OpenSourceView(TemplateView):
 
 class ProjectsView(TemplateView):
     template_name = 'pages/projects.html'
+
+
+class AboutContactView(TemplateView):
+    template_name = 'pages/about_contact.html'
