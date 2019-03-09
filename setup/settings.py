@@ -1,10 +1,23 @@
 import os
+import environ
 
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+# reading .env file
+environ.Env.read_env('.env')
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = '82jy%x5^g+ln5yoxf(y-yxu9+r#l4wynb8-09=naf58nfmeog='
-DEBUG = True
-ALLOWED_HOSTS = ['*']
+DEBUG = env('DEBUG')
+SECRET_KEY = env('SECRET_KEY')
+ALLOWED_HOSTS = [
+    'staging.trco.si',
+    'www.staging.trco.si',
+    'trco.si',
+    'www.trco.si',
+]
 
 # Application definition
 INSTALLED_APPS = [
