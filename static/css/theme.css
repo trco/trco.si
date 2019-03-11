@@ -30,6 +30,74 @@ body {
   justify-content: center;
 }
 
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(60, 60, 60, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* navbar modal */
+@media (max-width: 767px) {
+  .container-fullscreen {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .row-fullscreen {
+    background-color: #fff;
+    height: inherit;
+  }
+
+  .modal-content {
+    border: 0;
+    border-radius: 0;
+  }
+
+  .close {
+    color: #3c3c3c;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .close-icon {
+    font-size: 1.5em;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    z-index: 1;
+  }
+
+  .close-icon,
+  .close-icon:focus,
+  .close-icon:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .modal-link {
+    color: #3c3c3c;
+    font-size: 1.5em;
+  }
+
+  .modal-link:focus,
+  .modal-link:active {
+    text-decoration: none;
+    color: #3c3c3c;
+  }
+}
+
 /* dbmf app */
 .invalid {
   color: #dc3545;

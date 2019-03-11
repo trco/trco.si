@@ -19,25 +19,22 @@
   <!-- end messages -->
 
   <!-- navbar -->
-  <div class="container">
-    <div class="row justify-content-center">
+  <nav class="navbar navbar-expand-md navbar-light p-0 justify-content-end justify-content-md-center">
 
-      <!-- navbar -->
-      <div class="col-12 col-lg-8">
-        <!-- note: columns can be used directly in navbar since it's d-flex -->
-        <nav class="navbar navbar-light navbar-expand p-0">
-          <ul class="navbar-nav mx-auto">
-            <a class="nav-item nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %} py-4" href="{% url 'pages:index' %}">Home</a>
-            <a class="nav-item nav-link {% if request.resolver_match.url_name == 'open_source' or request.resolver_match.url_name == 'dbmf' or request.resolver_match.url_name == 'dfs' or request.resolver_match.url_name == 'create_movie' or request.resolver_match.url_name == 'update_movie' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:open_source' %}">Open source</a>
-            <a class="nav-item nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:projects' %}">Projects</a>
-            <a class="nav-item nav-link {% if request.resolver_match.url_name == 'about_contact' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:about_contact' %}">About & Contact</a>
-          </ul>
-        </nav>
-      </div>
-      <!-- end navbar -->
+    <button class="navbar-toggler custom-toggler p-3" type="button" data-toggle="modal" data-target="#navbar-modal">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    </div>
-  </div>
+    <ul class="d-none d-md-flex navbar-nav mx-auto">
+      <a class="nav-item nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %} py-4" href="{% url 'pages:index' %}">Home</a>
+      <a class="nav-item nav-link {% if request.resolver_match.url_name == 'open_source' or request.resolver_match.url_name == 'dbmf' or request.resolver_match.url_name == 'dfs' or request.resolver_match.url_name == 'create_movie' or request.resolver_match.url_name == 'update_movie' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:open_source' %}">Open source</a>
+      <a class="nav-item nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:projects' %}">Projects</a>
+      <a class="nav-item nav-link {% if request.resolver_match.url_name == 'about_contact' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:about_contact' %}">About & Contact</a>
+    </ul>
+  </nav>
+  <!-- end navbar -->
+
+  {% include '_navbar_modal.html' %}
 
 </header>
 <!-- end header -->
