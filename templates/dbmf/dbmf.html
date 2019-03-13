@@ -39,10 +39,10 @@
             <button class="signup-btn btn btn-primary" type="button" name="button">Sign up</button>
             {% if not user.is_anonymous %}
               <a href="{% url 'logout' %}" class="logout-btn btn btn-danger" role="button">Log out</a>
-              <span>
+              <div class="mt-2">
                 Your are logged in as
                 <strong>{{ user }}</strong>.
-              </span>
+              </div>
             {% else %}
               <button class="login-btn btn btn-primary" type="button" name="button">Log in</button>
             {% endif %}
@@ -54,16 +54,16 @@
         </h3>
         <p class="subtitle">Create, Read, Update and Delete books in Bootstrap modal.</p>
 
-        <article class="row">
+        <article class="row justify-content-center">
 
           <div class="col-12 mb-3">
             <button class="create-book btn btn-primary" type="button" name="button">
               <span class="fa fa-plus mr-2"></span>Create book</button>
           </div>
 
-          <div class="col-12 mb-3">
+          <div class="col-auto mb-3">
             {% if books %}
-              <table class="table">
+              <table class="table table-responsive">
                 <thead>
                   <tr>
                     <th class="text-center" scope="col">#</th>
@@ -73,7 +73,9 @@
                     <th class="text-center" scope="col">Publication date</th>
                     <th class="text-center" scope="col">Pages</th>
                     <th class="text-center" scope="col">Price (€)</th>
-                    <th class="text-center" scope="col">Read / Update / Delete</th>
+                    <th class="text-center" scope="col"></th>
+                    <th class="text-center" scope="col"></th>
+                    <th class="text-center" scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -86,17 +88,20 @@
                       <td class="text-center">{{ book.publication_date }}</td>
                       <td class="text-center">{{ book.pages }}</td>
                       <td class="text-center">{{ book.price }}</td>
-                      <td class="text-center">
+                      <td class="text-center px-1">
                         <button type="button" class="read-book btn btn-sm btn-primary" data-id="{% url 'dbmf:read_book' book.pk %}">
                           <span class="fa fa-eye"></span>
                         </button>
+                      </td>
+                      <td class="text-center px-1">
                         <button type="button" class="update-book btn btn-sm btn-primary" data-id="{% url 'dbmf:update_book' book.pk %}">
                           <span class="fa fa-pencil"></span>
                         </button>
+                      </td>
+                      <td class="text-center px-1">
                         <button type="button" class="delete-book btn btn-sm btn-danger" data-id="{% url 'dbmf:delete_book' book.pk %}">
                           <span class="fa fa-trash"></span>
                         </button>
-                        <!--<button type="button" class="delete-book btn btn-sm btn-danger" data-toggle="modal" data-target="#modal" data-id="{% url 'dbmf:delete_book' book.pk %}"> <span class="fa fa-trash" aria-label="Delete"></span> </button>-->
                       </td>
                     </tr>
                   {% endfor %}
@@ -122,25 +127,49 @@
     $(function () {
 
       // log in & sign up buttons
-      $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});
-      $(".signup-btn").modalForm({formURL: "{% url 'accounts:signup' %}"});
+      $(".login-btn").modalForm({
+        formURL: "{% url 'accounts:login' %}",
+        modalContent: ".modal-content-dbmf",
+        modalForm: ".modal-content-dbmf form"
+      });
+      $(".signup-btn").modalForm({
+        formURL: "{% url 'accounts:signup' %}",
+        modalContent: ".modal-content-dbmf",
+        modalForm: ".modal-content-dbmf form"
+      });
 
       // create book button
-      $(".create-book").modalForm({formURL: "{% url 'dbmf:create_book' %}"});
+      $(".create-book").modalForm({
+        formURL: "{% url 'dbmf:create_book' %}",
+        modalContent: ".modal-content-dbmf",
+        modalForm: ".modal-content-dbmf form"
+      });
 
       // update book buttons
       $(".update-book").each(function () {
-        $(this).modalForm({formURL: $(this).data('id')});
+        $(this).modalForm({
+          formURL: $(this).data('id'),
+          modalContent: ".modal-content-dbmf",
+          modalForm: ".modal-content-dbmf form"
+        });
       });
 
       // read book buttons
       $(".read-book").each(function () {
-        $(this).modalForm({formURL: $(this).data('id')});
+        $(this).modalForm({
+          formURL: $(this).data('id'),
+          modalContent: ".modal-content-dbmf",
+          modalForm: ".modal-content-dbmf form"
+        });
       });
 
       // delete book buttons
       $(".delete-book").each(function () {
-        $(this).modalForm({formURL: $(this).data('id')});
+        $(this).modalForm({
+          formURL: $(this).data('id'),
+          modalContent: ".modal-content-dbmf",
+          modalForm: ".modal-content-dbmf form"
+        });
       });
 
       // hide message

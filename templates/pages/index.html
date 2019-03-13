@@ -6,7 +6,9 @@
   <div class="row justify-content-center">
     <section class="col-lg-8 text-center">
 
-      <article class="typewriter mt-5"></article>
+      <article class="d-none d-md-block typewriter mt-5"></article>
+
+      <article class="d-md-none typewriter-mobile mt-5"></article>
 
       <article class="img-index text-center">
         <img src="http://learn.corel.com/wp-content/uploads/2016/06/double_exposure1.jpg" alt="">
@@ -21,13 +23,21 @@
 {% block extrascripts %}
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typeit/6.0.2/typeit.min.js"></script>
   <script type="text/javascript">
-  var instance = new TypeIt(".typewriter", {
+  var typewriter = new TypeIt(".typewriter", {
     speed: 50,
     waitUntilVisible: true
   })
   .type("They call me <strong>Trčo</strong>.").pause(1000).delete(29)
   .type("I'm web developer using").break()
   .type("Python, Django, SQL and JavaScript.").pause(1000).delete(60)
+  .type("<strong>Trčo</strong>").pause(1000).break()
+  .type("Web developer")
+  .go();
+
+  var typewriterMobile = new TypeIt(".typewriter-mobile", {
+    speed: 50,
+    waitUntilVisible: true
+  })
   .type("<strong>Trčo</strong>").pause(1000).break()
   .type("Web developer")
   .go();

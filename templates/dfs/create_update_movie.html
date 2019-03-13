@@ -48,9 +48,9 @@
 
   <div class="container-fluid mt-4">
     <div class="row justify-content-center">
-      <section class="col-lg-12 text-center">
+      <section class="hot-section col-lg-12 text-center">
 
-        <article class="text-center">
+        <article class="hot-article text-center">
           {% include hot_template %}
         </article>
 
@@ -63,7 +63,11 @@
 {% block extrascripts %}
   <script type="text/javascript">
     $(function () {
-      $("#table_hot").css("display","inline-block");
+      // Set css supporting overflow-x on #table_hot
+      var hotHeight = $("#table_hot").height();
+      $("#table_hot").css("display", "inline-block");
+      $(".hot-article").css("height", hotHeight);
+      $(".hot-section").css("height", hotHeight + 100).css("overflow-x", "auto");
     }());
   </script>
 {% endblock extrascripts %}
