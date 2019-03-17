@@ -21,12 +21,13 @@
   <script type="text/javascript">
   var typewriter = new TypeIt(".typewriter", {
     speed: 50,
-    waitUntilVisible: true
+    waitUntilVisible: true,
+    cursor: false
   })
   .type("They call me <strong>Trčo</strong>.").pause(1000).delete(29)
   .type("I'm a web developer using").break()
   .type("Python, Django & JavaScript.").pause(1000).delete(60).pause(500)
-  .type("<strong>Trčo</strong>").pause(1000).break().pause(1000)
+  .type("<strong>Trčo</strong>").pause(1500).break()
   .type("<strong># </strong>").pause(250)
   .type("<strong>W </strong>").pause(250)
   .type("<strong>E </strong>").pause(250)
@@ -36,9 +37,10 @@
 
   var typewriterMobile = new TypeIt(".typewriter-mobile", {
     speed: 50,
-    waitUntilVisible: true
+    waitUntilVisible: true,
+    cursor: false
   })
-  .type("<strong>Trčo</strong>").pause(1000).break().pause(1000)
+  .type("<strong>Trčo</strong>").break().pause(1500)
   .type("<strong># </strong>").pause(250)
   .type("<strong>W </strong>").pause(250)
   .type("<strong>E </strong>").pause(250)
