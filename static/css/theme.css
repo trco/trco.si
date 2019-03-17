@@ -2,7 +2,10 @@ body {
   color: #3c3c3c;
 }
 
-.typewriter,
+.typewriter {
+  font-size: 3.0em;
+}
+
 .typewriter-mobile {
   font-size: 2.5em;
 }
@@ -22,19 +25,6 @@ body {
 
 .subtitle {
   color: #828282;
-}
-
-.img-index {
-  position: fixed;
-  bottom: 0px;
-  display: flex;
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px)  and (orientation: landscape) {
-  .img-index {
-    display: none;
-  }
 }
 
 .custom-toggler .navbar-toggler-icon {
