@@ -1,10 +1,12 @@
-from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views import generic
 
 from .forms import BookForm
 from .models import Book
-from bootstrap_modal_forms.mixins import PassRequestMixin, DeleteAjaxMixin
+from bootstrap_modal_forms.generic import (BSModalCreateView,
+                                           BSModalUpdateView,
+                                           BSModalReadView,
+                                           BSModalDeleteView)
 
 
 class Dbmf(generic.ListView):
@@ -13,16 +15,14 @@ class Dbmf(generic.ListView):
     template_name = 'dbmf/dbmf.html'
 
 
-class BookCreateView(PassRequestMixin, SuccessMessageMixin,
-                     generic.CreateView):
+class BookCreateView(BSModalCreateView):
     template_name = 'dbmf/create_book.html'
     form_class = BookForm
     success_message = 'Success: Book was created.'
     success_url = reverse_lazy('dbmf:dbmf')
 
 
-class BookUpdateView(PassRequestMixin, SuccessMessageMixin,
-                     generic.UpdateView):
+class BookUpdateView(BSModalUpdateView):
     model = Book
     template_name = 'dbmf/update_book.html'
     form_class = BookForm
@@ -30,12 +30,12 @@ class BookUpdateView(PassRequestMixin, SuccessMessageMixin,
     success_url = reverse_lazy('dbmf:dbmf')
 
 
-class BookReadView(generic.DetailView):
+class BookReadView(BSModalReadView):
     model = Book
     template_name = 'dbmf/read_book.html'
 
 
-class BookDeleteView(DeleteAjaxMixin, generic.DeleteView):
+class BookDeleteView(BSModalDeleteView):
     model = Book
     template_name = 'dbmf/delete_book.html'
     success_message = 'Success: Book was deleted.'
