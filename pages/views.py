@@ -13,9 +13,5 @@ class ProjectsView(TemplateView):
     template_name = 'pages/projects.html'
 
 
-class AboutContactView(TemplateView):
-    template_name = 'pages/about_contact.html'
-
-
 class BootstrapWeekpickerView(TemplateView):
     template_name = 'pages/bootstrap_weekpicker.html'

@@ -5,10 +5,18 @@
 
 <div class="container">
   <div class="row justify-content-center">
-    <section class="col-lg-8 text-center">
+    <section class="col-lg-6 text-center">
 
-      <article class="d-none d-md-block typewriter mt-5"></article>
-      <article class="d-md-none typewriter-mobile mt-5"></article>
+      <h1 class="typewriter my-4"></h1>
+
+      <article class="mb-5">
+        <h3 class="mb-5">My name is <strong>Uroš Trstenjak</strong> and I'm web developer living in Ljubljana, Slovenia.</h3>
+        <p class="subtitle">I primarily use <strong>Python</strong> and <strong>Django</strong> together with <strong>Postgres</strong>, <strong>Gunicorn</strong> and <strong>Nginx</strong> for the backend and <strong>JavaScript</strong>, <strong>jQuery</strong> and <strong>Bootstrap</strong> for the frontend. I'm comfortable using Django for all sorts of projects spanning from full CMS websites, database-driven web applications to REST-driven applications.</p>
+        <p class="subtitle">The projects I have been working on so far followed the <strong>Agile development</strong> methodology, while I have also studied <strong>Test-Driven Development</strong> with <strong>Python</strong>, <strong>Django</strong> and <strong>Selenium</strong>.</p>
+        <p class="subtitle">I have a basic knowledge of <strong>ReactJS</strong>, <strong>Webapp2</strong> and <strong>Google App Engine</strong>.</p>
+
+        <h4 class="mt-5 mb-4">Feel free to contact me via email at <strong>uros.trstenjak@gmail.com</strong>.</h4>
+      </article>
 
     </section>
   </div>
@@ -19,25 +27,11 @@
 {% block extrascripts %}
   <script type="text/javascript" src="{% static 'js/typeit.min.js' %}"></script>
   <script type="text/javascript">
-  var typewriter = new TypeIt(".typewriter", {
+  var instance = new TypeIt(".typewriter", {
     speed: 50,
     waitUntilVisible: true,
     cursor: false
   })
-  .type("They call me <strong>Trčo</strong>.").pause(1000).delete(29)
-  .type("I'm a web developer using").break()
-  .type("Python, Django & JavaScript.").pause(1000).delete(60).pause(500)
-  .type("<strong>Trčo</strong>").break()
-  .type("<strong>WEB</strong> developer")
-  .go();
-
-  var typewriterMobile = new TypeIt(".typewriter-mobile", {
-    speed: 50,
-    waitUntilVisible: true,
-    cursor: false
-  })
-  .type("<strong>Trčo</strong>").break()
-  .type("<strong>WEB</strong> developer")
-  .go();
+  .type("About").go();
   </script>
 {% endblock extrascripts %}

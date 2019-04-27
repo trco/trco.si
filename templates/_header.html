@@ -26,10 +26,9 @@
     </button>
 
     <ul class="d-none d-md-flex navbar-nav mx-auto">
-      <a class="nav-item nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %} py-4" href="{% url 'pages:index' %}">Home</a>
+      <a class="nav-item nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %} py-4" href="{% url 'pages:index' %}">About</a>
       <a class="nav-item nav-link {% if request.resolver_match.url_name == 'open_source' or request.resolver_match.url_name == 'dbmf' or request.resolver_match.url_name == 'dfs' or request.resolver_match.url_name == 'create_movie' or request.resolver_match.url_name == 'update_movie' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:open_source' %}">Open source</a>
       <a class="nav-item nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:projects' %}">Projects</a>
-      <a class="nav-item nav-link {% if request.resolver_match.url_name == 'about_contact' %}active{% endif %} py-4 ml-4 ml-lg-5" href="{% url 'pages:about_contact' %}">About & Contact</a>
     </ul>
   </nav>
   <!-- end navbar -->
