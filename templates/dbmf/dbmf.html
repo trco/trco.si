@@ -4,12 +4,13 @@
 {% block content %}
 
   {% include "dbmf/_modal.html" %}
+  {% include "dbmf/_modal_auth.html" %}
 
   <div class="container">
     <div class="row justify-content-center">
       <section class="col-lg-12 text-center">
 
-        <h1 class="my-4">Django Bootstrap Modal Forms <span>v1.4.2</span></h1>
+        <h1 class="my-4">Django Bootstrap Modal Forms <span>v1.5.0</span></h1>
         <p class="subtitle">A Django plugin for creating AJAX driven forms in Bootstrap modal.</p>
         <a href="https://github.com/trco/django-bootstrap-modal-forms" target="_blank" style="text-decoration: none;">
           <svg style="" viewbox="0 0 64 64" width="32" height="32">
@@ -127,47 +128,41 @@
 
       // log in & sign up buttons
       $(".login-btn").modalForm({
-        formURL: "{% url 'accounts:login' %}",
-        modalContent: ".modal-content-dbmf",
-        modalForm: ".modal-content-dbmf form"
+        modalID: "#modal-auth",
+        formURL: "{% url 'accounts:login' %}"
       });
       $(".signup-btn").modalForm({
-        formURL: "{% url 'accounts:signup' %}",
-        modalContent: ".modal-content-dbmf",
-        modalForm: ".modal-content-dbmf form"
+        modalID: "#modal-auth",
+        formURL: "{% url 'accounts:signup' %}"
       });
 
       // create book button
       $(".create-book").modalForm({
-        formURL: "{% url 'dbmf:create_book' %}",
-        modalContent: ".modal-content-dbmf",
-        modalForm: ".modal-content-dbmf form"
+        modalID: "#modal-crud",
+        formURL: "{% url 'dbmf:create_book' %}"
       });
 
       // update book buttons
       $(".update-book").each(function () {
         $(this).modalForm({
-          formURL: $(this).data('id'),
-          modalContent: ".modal-content-dbmf",
-          modalForm: ".modal-content-dbmf form"
+          modalID: "#modal-crud",
+          formURL: $(this).data('id')
         });
       });
 
       // read book buttons
       $(".read-book").each(function () {
         $(this).modalForm({
-          formURL: $(this).data('id'),
-          modalContent: ".modal-content-dbmf",
-          modalForm: ".modal-content-dbmf form"
+          modalID: "#modal-crud",
+          formURL: $(this).data('id')
         });
       });
 
       // delete book buttons
       $(".delete-book").each(function () {
         $(this).modalForm({
-          formURL: $(this).data('id'),
-          modalContent: ".modal-content-dbmf",
-          modalForm: ".modal-content-dbmf form"
+          modalID: "#modal-crud",
+          formURL: $(this).data('id')
         });
       });
 
